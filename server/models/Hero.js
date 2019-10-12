@@ -6,10 +6,13 @@ const Schema = new mongoose.Schema({
     avatar: {
         type: String
     },
+    banner: {
+        type: String
+    },
     title: {
         type: String
     },
-    category: [{ type: mongoose.SchemaTypes.ObjectId, ref: 'Category' }],
+    categories: [{ type: mongoose.SchemaTypes.ObjectId, ref: 'Category' }],
     scores: {
         difficult: {
             type: Number
@@ -29,6 +32,12 @@ const Schema = new mongoose.Schema({
             type: String
         },
         name: {
+            type: String
+        },
+        delay: {
+            type: String
+        },
+        cost: {
             type: String
         },
         description: {
@@ -56,4 +65,4 @@ const Schema = new mongoose.Schema({
         }
     }]
 });
-module.exports = mongoose.model('Hero', Schema);
+module.exports = mongoose.model('Hero', Schema, 'heroes');

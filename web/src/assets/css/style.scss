@@ -1,0 +1,377 @@
+@import "./variables";
+
+/** 代码重置 **/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+p,
+blockquote,
+pre,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+* {
+  outline: none;
+}
+
+html,
+body {
+  font: 13px/1.2 "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial,
+    sans-serif;
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, 微软雅黑, sans-serif;
+  color: #333;
+  background: #ededed;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #d4d9de;
+}
+
+.border-top {
+  border-top: 1px solid #d4d9de;
+}
+
+/* custom (自定义)*/
+a,
+ins {
+  color: #222;
+  text-decoration: none;
+}
+a:visited span {
+  color: #999 !important;
+}
+
+//w-100
+.w-100 {
+  width: 100%;
+}
+//w-100
+.h-100 {
+  height: 100%;
+}
+
+.text-ellipsis {
+  display: inline-block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.block {
+  display: inline-block;
+}
+
+//定义d-flex（flex布局）
+.d-flex {
+  display: flex;
+}
+
+//定义.flex-col(flex布局方向）
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+//默认把自己拉伸
+.flex-1 {
+  flex: 1;
+}
+
+//定义text-primary等字体颜色
+@each $colorKey, $color in $colors {
+  .text-#{$colorKey} {
+    color: $color;
+  }
+}
+
+//定义bg-primary等背景颜色
+@each $colorKey, $color in $colors {
+  .bg-#{$colorKey} {
+    background-color: $color;
+  }
+}
+
+//定义font-xs等字体大小
+@each $sizeKey, $size in $font-sizes {
+  .font-#{$sizeKey} {
+    font-size: $size * $base-font-size;
+  }
+}
+
+//定义text-left(right,center)
+@each $var in (left, center, right) {
+  .text-#{$var} {
+    text-align: $var !important;
+  }
+}
+
+//定义jc-center等flex主轴对齐方式
+@each $key, $val in $flex-jc {
+  .jc-#{$key} {
+    justify-content: $val;
+  }
+}
+
+//定义ai-items等flex交叉轴轴对齐方式
+@each $key, $val in $flex-ai {
+  .ai-#{$key} {
+    align-items: $val;
+  }
+}
+
+@each $typeKey, $type in $spacing-types {
+  //定义m-1等
+  @each $sizeKey, $size in $spacing-sizes {
+    .#{$typeKey}-#{$sizeKey} {
+      #{$type}: $size * $spacing-base-size;
+    }
+  }
+
+  //定义mx-1等
+  @each $sizeKey, $size in $spacing-sizes {
+    //mx-1
+    .#{$typeKey}x-#{$sizeKey} {
+      #{$type}-left: $size * $spacing-base-size;
+      #{$type}-right: $size * $spacing-base-size;
+    }
+    //my-1
+    .#{$typeKey}y-#{$sizeKey} {
+      #{$type}-top: $size * $spacing-base-size;
+      #{$type}-bottom: $size * $spacing-base-size;
+    }
+  }
+
+  //定义mt-1等
+  @each $directionKey, $direction in $spacing-directions {
+    @each $sizeKey, $size in $spacing-sizes {
+      .#{$typeKey}#{$directionKey}-#{$sizeKey} {
+        #{$type}-#{$direction}: $size * $spacing-base-size;
+      }
+    }
+  }
+}
+
+//雪碧图
+.sprite {
+  background: url(../images/index.png) no-repeat 0 0;
+  background-size: 28.8462rem;
+  display: inline-block;
+  &.sprite-avatar {
+    background-position: 0 72.588%;
+    width: 2.3077rem;
+    height: 2.3077rem;
+  }
+  &.sprite-btn {
+    background-position: 18.73% 71.694%;
+    width: 4.6154rem;
+    height: 1.8462rem;
+  }
+  &.sprite-fact {
+    background-position: 63.546% 15.517%;
+    width: 2rem;
+    height: 2rem;
+  }
+  &.sprite-story {
+    background-position: 90.483% 15.614%;
+    width: 2rem;
+    height: 2rem;
+  }
+  &.sprite-store {
+    background-position: 36.746% 0.924%;
+    width: 2rem;
+    height: 2rem;
+  }
+  &.sprite-experience {
+    background-position: 10.408% 15.517%;
+    width: 2rem;
+    height: 2rem;
+  }
+  &.sprite-new {
+    background-position: 89.733% 1.266%;
+    width: 2rem;
+    height: 2rem;
+  }
+  &.sprite-inheritance {
+    background-position: 36.467% 15.287%;
+    width: 2rem;
+    height: 2rem;
+  }
+  &.sprite-fan {
+    background-position: 36.467% 15.287%;
+    width: 2rem;
+    height: 2rem;
+  }
+  &.sprite-king {
+    background-position: 63.3% 0.927%;
+    width: 2rem;
+    height: 2rem;
+  }
+  &.sprite-public {
+    background-position: 0 96.207%;
+    width: 2rem;
+    height: 2rem;
+  }
+  &.sprite-pack {
+    background-position: 38.577% 52.076%;
+    width: 0.7692rem;
+    height: 0.7692rem;
+  }
+  &.sprite-news {
+    background-position: 0.138% 50.452%;
+    width: 1.1538rem;
+    height: 1.1538rem;
+  }
+  &.sprite-hero {
+    background-position: 46.768% 60.452%;
+    width: 1.1538rem;
+    height: 1.1538rem;
+  }
+  &.sprite-video {
+    background-position: 0.138% 56.532%;
+    width: 1.1538rem;
+    height: 0.8462rem;
+  }
+  &.sprite-graphic {
+    background-position: 0.138% 62.783%;
+    width: 1rem;
+    height: 1rem;
+  }
+  &.sprite-more {
+    background-position: 47.619% 56.305%;
+    width: 1.3846rem;
+    height: 0.2308rem;
+  }
+}
+
+//navi
+.nav-container {
+  display: flex;
+  .nav-item {
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid transparent;
+    &.active {
+      color: map-get($colors, "primary");
+      border-bottom-color: map-get($colors, "primary");
+    }
+  }
+  &.nav-inverse {
+    .nav-item {
+      color: map-get($colors, "white");
+      &.active {
+        border-bottom-color: map-get($colors, "white");
+      }
+    }
+  }
+}

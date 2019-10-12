@@ -1,0 +1,30 @@
+{
+  "id": "1453748",
+  "name": "web",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "180971",
+      "name": "相关",
+      "font_class": "xiangguan",
+      "unicode": "e67d",
+      "unicode_decimal": 59005
+    },
+    {
+      "icon_id": "1334279",
+      "name": "攻略",
+      "font_class": "gonglue",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "3703986",
+      "name": "back",
+      "font_class": "back",
+      "unicode": "e67e",
+      "unicode_decimal": 59006
+    }
+  ]
+}
