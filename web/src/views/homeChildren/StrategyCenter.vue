@@ -1,8 +1,14 @@
 <template>
-  <div>攻略中心</div>
+  <div>
+    <swiperNav></swiperNav>
+  </div>
 </template>
 <script>
+import swiperNav from "../../components/SwiperNav"
 export default {
-  name: "strategyCenter"
+  name: "strategyCenter",
+   components: {
+    swiperNav
+  }
 };
 </script>

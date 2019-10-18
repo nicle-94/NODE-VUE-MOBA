@@ -19,10 +19,10 @@
         >{{item.name}}</a>
       </div>
     </div>
-    <div>
+    <div class="swiper">
       <swiper
         ref="mySwiper"
-        :options="{autoHeight:true}"
+        :options="{autoHeight:true,observer: true}"
         @slide-change="()=>active=$refs.mySwiper.swiper.realIndex"
       >
         <!-- slides -->
@@ -39,10 +39,6 @@ export default {
   name: "listCard",
   data() {
     return {
-      pagination: {
-        el: ".pagination-home"
-      },
-      swiperSlides: [1, 2, 3],
       active: 0
     };
   },
@@ -59,5 +55,5 @@ export default {
   }
 };
 </script>
-<style>
+<style lang="scss">
 </style>

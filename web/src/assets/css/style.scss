@@ -341,7 +341,7 @@ a:visited span {
   &.sprite-video {
     background-position: 0.138% 56.532%;
     width: 1.1538rem;
-    height: 0.8462rem;
+    height: 1.1538rem;
   }
   &.sprite-graphic {
     background-position: 0.138% 62.783%;
@@ -369,9 +369,6 @@ a:visited span {
   &.nav-inverse {
     .nav-item {
       color: map-get($colors, "white");
-      &.active {
-        border-bottom-color: map-get($colors, "white");
-      }
     }
   }
 }
