@@ -47,9 +47,7 @@ export default {
           });
           this.fetch();
         })
-        .catch(() => {
-          console.log("取消");
-        });
+        .catch(() => {});
     }
   }
 };

@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0f0a15"],{"9cd9":function(n,e,t){"use strict";t.r(e);var c=function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("div",[n._v("赛事中心")])},a=[],u={name:"matchIndex"},l=u,r=t("2877"),s=Object(r["a"])(l,c,a,!1,null,null,null);e["default"]=s.exports}}]);
+//# sourceMappingURL=chunk-2d0f0a15.8cb734d8.js.map
