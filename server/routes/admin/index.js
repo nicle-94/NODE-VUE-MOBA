@@ -54,11 +54,22 @@ module.exports = app => {
 
     //获取文件中间件
     const multer = require('multer')
+    const MAO = require('multer-aliyun-oss');
     //上传到uploads文件夹
-    const upload = multer({ dest: __dirname + '../../../uploads' })
+    const upload = multer({
+        // dest: __dirname + '../../../uploads' 
+        storage: MAO({
+            config: {
+                region: 'oss-cn-hongkong',
+                accessKeyId: 'LTAI4FeBSxWiVhAQs2jc486T',
+                accessKeySecret: 'k6g1Nb8lBXc0gkXq74VkEN438ttcNk',
+                bucket: 'nodema'
+            }
+        })
+    })
     app.use('/admin/api/upload', auth(), upload.single('file'), (req, res) => {
         const file = req.file
-        file.url = `http://ma.wxywss.co/uploads/${file.filename}`
+        // file.url = `http://ma.wxywss.co/uploads/${file.filename}`
         res.send(file)
     })
 
