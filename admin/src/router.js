@@ -54,7 +54,7 @@ const router = new Router({
 
 //导航守卫
 router.beforeEach((to, from, next) => {
-  //要去的页面不是公开的且没有token
+  // //要去的页面不是公开的且没有token
   if (!to.meta.isPublic && !localStorage.token) {
     return next('/login')
   }
